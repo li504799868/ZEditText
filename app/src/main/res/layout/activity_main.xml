@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.lzp.zedittex.ZEditText
+        android:id="@+id/edit_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        app:cursorDrawable="@drawable/drawable_cursor"
+        app:cursorDrawableWidth="1dp"
+        app:inputCount="5"
+        app:isSquare="true"
+        app:space="10dp"
+        app:textBackground="@drawable/default_edit_bg" />
+
+    <com.lzp.zedittex.ZEditText
+        android:id="@+id/edit_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        app:inputCount="5"
+        app:isPassword="true"
+        app:isSquare="true"
+        app:space="10dp"
+        app:textBackground="@drawable/bg_edit_text_1" />
+
+    <com.lzp.zedittex.ZEditText
+        android:id="@+id/edit_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:cursorDrawable="@drawable/drawable_cursor_2"
+        app:cursorDrawableHeight="15dp"
+        app:cursorDrawableWidth="15dp"
+        app:inputCount="5"
+        app:isSquare="true"
+        app:space="10dp"
+        app:textBackground="@drawable/wjx" />
+
+</LinearLayout>

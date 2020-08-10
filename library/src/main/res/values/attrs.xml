@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ZEditText">
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+        <!-- 输入的文字的个数 -->
+        <attr name="inputCount" format="integer" />
+        <!-- 文字之间的间距 -->
+        <attr name="space" format="dimension" />
+        <!-- 是否保持文字正方形 -->
+        <attr name="isSquare" format="boolean" />
+        <!-- 文字的背景 -->
+        <attr name="textBackground" format="reference" />
+        <!-- 是否是密码 -->
+        <attr name="isPassword" format="boolean" />
+        <attr name="cursorDrawable" format="reference" />
+        <attr name="cursorDrawableWidth" format="dimension" />
+        <attr name="cursorDrawableHeight" format="dimension" />
+    </declare-styleable>
+</resources>
