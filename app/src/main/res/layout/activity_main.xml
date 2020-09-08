@@ -11,11 +11,14 @@
         android:id="@+id/edit_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         android:textSize="18sp"
         app:cursorDrawable="@drawable/drawable_cursor"
         app:cursorDrawableWidth="1dp"
-        app:inputCount="5"
+        app:inputCount="6"
+        app:isBoldText="true"
         app:isSquare="true"
         app:space="10dp"
         app:textBackground="@drawable/default_edit_bg" />
@@ -29,6 +32,7 @@
         app:inputCount="5"
         app:isPassword="true"
         app:isSquare="true"
+        app:passwordText="*"
         app:space="10dp"
         app:textBackground="@drawable/bg_edit_text_1" />
 

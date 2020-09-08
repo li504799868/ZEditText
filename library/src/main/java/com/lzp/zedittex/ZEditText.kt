@@ -22,6 +22,10 @@ class ZEditText @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     private var text: String = ""
+        set(value) {
+            field = value
+            invalidate()
+        }
 
     private val mPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         isAntiAlias = true
@@ -40,6 +44,12 @@ class ZEditText @JvmOverloads constructor(
         set(value) {
             field = value
             mPaint.color = field
+            invalidate()
+        }
+
+    var passwordText: String = "●"
+        set(value) {
+            field = value
             invalidate()
         }
 
@@ -91,6 +101,12 @@ class ZEditText @JvmOverloads constructor(
             invalidate()
         }
 
+    var isBoldText:Boolean = false
+        set(value) {
+            field = value
+            invalidate()
+        }
+
     /**
      * 绘制cursor闪烁
      * */
@@ -109,6 +125,8 @@ class ZEditText @JvmOverloads constructor(
             isSquare = getBoolean(R.styleable.ZEditText_isSquare, true)
             textBackgroundDrawable = getDrawable(R.styleable.ZEditText_textBackground)
             isPassword = getBoolean(R.styleable.ZEditText_isPassword, false)
+            passwordText = getString(R.styleable.ZEditText_passwordText) ?: "●"
+            isBoldText = getBoolean(R.styleable.ZEditText_isBoldText, false)
             cursorDrawable = getDrawable(R.styleable.ZEditText_cursorDrawable)
             cursorDrawableWidth =
                 getDimensionPixelSize(R.styleable.ZEditText_cursorDrawableWidth, dip2px(1f))
@@ -121,6 +139,7 @@ class ZEditText @JvmOverloads constructor(
 
         mPaint.textSize = textSize
         mPaint.color = textColor
+        mPaint.isFakeBoldText = isBoldText
     }
 
     fun setOnEditCompleteListener(listener: OnEditCompleteListener) {
@@ -238,7 +257,7 @@ class ZEditText @JvmOverloads constructor(
             drawTextBackground(canvas, index, perWidth)
             if (index < text.length) {
                 val s = if (isPassword) {
-                    "●"
+                    passwordText
                 } else {
                     text[index].toString()
                 }
@@ -329,6 +348,14 @@ class ZEditText @JvmOverloads constructor(
         if (enabled) {
             getInputMethodManager()?.restartInput(this)
         }
+    }
+
+    fun clear() {
+        text = ""
+    }
+
+    fun setContent(text: String) {
+        this.text = text
     }
 
     interface OnEditCompleteListener {

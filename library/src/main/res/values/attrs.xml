@@ -3,6 +3,8 @@
     <declare-styleable name="ZEditText">
         <attr name="android:textSize" />
         <attr name="android:textColor" />
+        <attr name="isBoldText" format="boolean" />
+        <attr name="passwordText" format="string" />
         <!-- 输入的文字的个数 -->
         <attr name="inputCount" format="integer" />
         <!-- 文字之间的间距 -->
