@@ -101,7 +101,7 @@ class ZEditText @JvmOverloads constructor(
             invalidate()
         }
 
-    var isBoldText:Boolean = false
+    var isBoldText: Boolean = false
         set(value) {
             field = value
             invalidate()
@@ -192,6 +192,7 @@ class ZEditText @JvmOverloads constructor(
                     invalidate()
 
                     if (text.length == inputCount) {
+                        hideSoft()
                         mOnEditCompleteListener?.onEditComplete(text)
                     }
                 }
